@@ -12,8 +12,10 @@ import { HiPlus, HiDotsVertical } from "react-icons/hi";
 import HeaderItem from "./HeaderItem";
 
 const Header = () => {
+    // Mobile dropdown toggle
     const [toggle, setToggle] = useState(false);
 
+    // Navbar menu links
   const menu = [
     {
       name: "HOME",
@@ -43,7 +45,7 @@ const Header = () => {
 
   return (
 
-    // Navbar
+    // Navbar code
     <div className="flex items-center gap-8 justify-between p-5">
       <div className="flex gap-8 items-center">
 
