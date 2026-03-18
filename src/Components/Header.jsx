@@ -50,7 +50,7 @@ const Header = () => {
       <div className="flex gap-8 items-center">
 
         {/* Disney Logo */}
-        <img src={logo} className="w-[80px] md:w-[115px] object-cover" alt="" />
+        <img src={logo} className="w-[80px] md:w-[115px] object-cover cursor-pointer hover:scale-110 ease-in-out duration-300" alt="" />
 
         {/* Desktop Menu */}
         <div className="hidden md:flex gap-8">
