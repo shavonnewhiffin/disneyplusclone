@@ -2,8 +2,9 @@ import React, { useEffect, useState, useRef } from 'react'
 import GlobalApi from '../Services/GlobalApi'
 import MovieCard from './MovieCard'
 import { IoChevronBackOutline, IoChevronForwardOutline } from 'react-icons/io5'
+import LgMovieCard from './LgMovieCard'
 
-const MovieList = ({ genreId }) => {
+const MovieList = ({ genreId, index }) => {
     const elementRef = useRef();
     const [movieList, setMovieList] = useState([])
 
@@ -16,22 +17,29 @@ const MovieList = ({ genreId }) => {
 
     const getMovieByGenreId = ()=>{
         GlobalApi.getMovieByGenreId(genreId).then(resp=>{
-            setMovieList(resp.results)
+            // Filter out movies without posters before saving to state
+            const moviesWithPosters = resp.results.filter(item => item.poster_path);
+            setMovieList(moviesWithPosters)
         })
     }
 
     return (
+
         <div className="relative">
+            
             {/* Left Chevron */}
             <IoChevronBackOutline 
-                className="hidden md:block text-white text-[50px] p-2 cursor-pointer absolute top-1/2 -translate-y-1/2 left-2 z-10 hover:scale-110 transition-transform"
+                    className="hidden md:block text-white text-[50px] p-2 cursor-pointer absolute top-1/2 -translate-y-1/2 left-2 z-10 hover:scale-110 transition-transform"
                 onClick={()=>sliderLeft(elementRef.current)}
             />
 
             {/* Slider */}
             <div className="flex overflow-x-auto gap-8 scrollbar-hide pt-5 px-5 pb-5 z-0 scroll-smooth" ref={elementRef}>
-                {movieList.map((item)=>(
-                    <MovieCard key={item.id} movie={item} />
+                {movieList
+                .map((item)=>(
+                    <>
+                    {index%3==0? <LgMovieCard key={item} movie={item}/> : <MovieCard key={item.id} movie={item} />}
+                    </>
                 ))}
             </div> 
 
