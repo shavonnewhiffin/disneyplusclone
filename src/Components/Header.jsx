@@ -87,7 +87,7 @@ const Header = () => {
           </div>
         </div>
       </div>
-      <img src={luca} className="w-[40px] rounded-full" alt="" />
+      <img src={luca} className="w-[40px] rounded-full border-2 border-transparent hover:border-white cursor-pointer transition-all duration-200 alt="/>
     </div>
   );
 };

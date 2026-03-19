@@ -1,5 +1,7 @@
 import React from 'react'
 
+// Styling the Nav links within the header passed from Header.jsx
+
 const HeaderItem = ({name, Icon, showText = true}) => {
   return (
     <div className='text-white flex items-center gap-3

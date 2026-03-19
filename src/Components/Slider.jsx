@@ -40,13 +40,13 @@ const Slider = () => {
   }
 
   return (
-    <div>
+    <div className="relative w-full"> 
 
       {/* Chevron buttons to scroll the slider left and right */}
-      <HiChevronLeft className="hidden md:block text-white text-[30px] absolute mx-8 mt-[150px] cursor-pointer" onClick={()=>sliderLeft(elementRef.current)}/>
-      <HiChevronRight className= "hidden md:block text-white text-[30px] absolute mx-8 mt-[150px] cursor-pointer right-0"  onClick={()=>sliderRight(elementRef.current)}/>
+      <HiChevronLeft className="hidden md:block text-white text-[30px] absolute top-1/2 -translate-y-1/2 left-4 cursor-pointer " onClick={()=>sliderLeft(elementRef.current)}/>
+      <HiChevronRight className= "hidden md:block text-white text-[30px] absolute top-1/2 -translate-y-1/2 right-4 cursor-pointer "  onClick={()=>sliderRight(elementRef.current)}/>
 
-        {/* Render hero movie cards (horizontally scrollable) */}
+        {/* Hero movie cards (horizontally scrollable) */}
     <div className="flex overflow-x-auto w-full px-16 py-4 scrollbar-hide scroll-smooth" ref={elementRef}>
    
       {movieList.map((item) => (
@@ -54,7 +54,7 @@ const Slider = () => {
           src={IMAGE_BASE_URL + item.backdrop_path}
           key={item.id}
           alt={item.title || item.name}
-          className="min-w-full md:h-[310px] object-cover object-left-top mr-5 rounded-md hover:border-[4px]
+          className="min-w-full  lg:h-[600px] sm:h-[310px] object-cover object-left-top mr-5 rounded-md hover:border-[4px]
           border-gray-400 transition-all duration-100 ease-in"
         />
       ))}

@@ -40,17 +40,16 @@ const MovieList = ({ genreId, index }) => {
 
       {/* Slider */}
       <div
-        className="flex overflow-hidden gap-8 scrollbar-hide pt-5 px-5 pb-4 z-0 scroll-smooth"
+        className="flex overflow-hidden gap-8 scrollbar-hide pt-5 px-5 z-0 scroll-smooth
+        "
         ref={elementRef}
       >
         {movieList.map((item) => (
-          <>
-            {index % 3 == 0 ? (
-              <LongMovieCard key={item} movie={item} />
+            index % 3 == 0 ? (
+              <LongMovieCard key={item.id} movie={item} className="pb-1"/>
             ) : (
-              <MovieCard key={item.id} movie={item} />
-            )}
-          </>
+              <MovieCard key={item.id} movie={item} className="pb-2 last:pb-8" />
+            )
         ))}
       </div>
 

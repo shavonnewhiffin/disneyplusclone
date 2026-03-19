@@ -1,6 +1,8 @@
 import React from 'react'
 import logo from './../assets/Images/disney.png'
 
+// Responsive footer styling
+
 const Footer = () => {
   return (
 <section className="w-full flex justify-center bg-[#0e101b] ">
