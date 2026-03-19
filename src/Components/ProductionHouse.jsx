@@ -34,12 +34,12 @@ const ProductionHouse = () => {
 
   return (
     // Display all of the Production Houses
-    <div className="flex gap-2 md:gap-5 p-2 px-5 md:px-16">
+    <div className="flex items-center justify-center gap-2 md:gap-5 p-2 px-5 md:px-16">
         {/* Map over every object in the array and dynamically render image and video */}
         {productionHouseList.map((item)=>(
         <div className="group relative border-[2px] border-gray-600 rounded-lg hover:scale-110 transitional-all duration-300 ease-in-out cursor-pointer shadow-xl shadow-black">
 
-         <video src={item.video} autoPlay loop playsInline muted className='absolute top-0 rounded-md z-10 opacity-0 group-hover:opacity-50'/>
+         <video src={item.video} autoPlay loop playsInline muted className='absolute top-0 rounded-md z-10 opacity-0 group-hover:opacity-50 w-full h-full'/>
 
             <img src={item.image} className="w-full z-[1]" />
         </div>))}

@@ -1,14 +1,16 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* index.css */
 
-@import 'tailwindcss';
+/* 1️⃣ Import Tailwind layers correctly */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+
+/* 2️⃣ Import plugins */
 @import 'tailwind-scrollbar-hide/v4';
 
+/* 3️⃣ Tailwind utilities */
+@tailwind utilities;
 
-  body {
-    background-color: #131520;
-  }
-  
-
-  
+/* 4️⃣ Custom CSS */
+body {
+  background-color: #131520;
+}
