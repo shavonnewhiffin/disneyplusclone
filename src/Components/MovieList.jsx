@@ -40,7 +40,7 @@ const MovieList = ({ genreId, index }) => {
 
       {/* Slider */}
       <div
-        className="flex overflow-hidden gap-8 scrollbar-hide pt-5 px-5 z-0 scroll-smooth
+        className="flex overflow-hidden gap-8 scrollbar-hide pt-5 px-5 z-0 scroll-smooth p-4
         "
         ref={elementRef}
       >
