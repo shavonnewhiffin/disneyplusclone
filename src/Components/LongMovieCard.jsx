@@ -5,7 +5,7 @@ export default function LongMovieCard({movie}) {
   return (
     <div>
       <>
-      <div className="hover:scale-110 transition-all duration-150 ease-in cursor-pointer">
+      <div className="hover:scale-110 transition-all duration-150 ease-in cursor-pointer ">
         <img
           src={IMAGE_BASE_URL + movie.backdrop_path}
           className="w-[110px] md:w-[260px] rounded-lg hover:border-[3px] border-gray-400"

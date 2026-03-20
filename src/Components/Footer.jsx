@@ -1,11 +1,9 @@
 import React from 'react'
 import logo from './../assets/Images/disney.png'
 
-// Responsive footer styling
-
 const Footer = () => {
   return (
-<section className="w-full flex justify-center bg-[#0e101b] ">
+<section className="w-full flex justify-center bg-[#0e101b] w-full">
   <div className="flex flex-col items-center w-full max-w-8xl px-4">
     <figure className="w-[140px] mb-4"  
     onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} >
@@ -13,7 +11,7 @@ const Footer = () => {
     </figure>
 
     <div className="w-full">
-      <ul className="text-white flex flex-wrap justify-center gap-x-6 gap-y-3 text-center text-xs cursor-pointer">
+      <ul className="text-white flex flex-wrap justify-center gap-x-6 gap-y-3 text-center text-xs cursor-pointer ">
         <li>Subscriber Agreement</li>
         <li>Disney Terms of Use</li>
         <li>Privacy Policy</li>
