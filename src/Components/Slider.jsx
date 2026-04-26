@@ -32,12 +32,17 @@ const Slider = () => {
 
   // Chevron scroll f'ns: take up full width of the screen while leaving 110 px on either end to show the next/previous movie cards for UX
 
-  const sliderRight = (element)=> {
-    element.scrollLeft+=screenWidth-110
-  }
-  const sliderLeft = (element)=> {
-    element.scrollLeft-=screenWidth-110
-  }
+  const sliderRight = (element) => {
+    if (!element) return;
+    const cardWidth = element.children[0].offsetWidth + 20; // card width + gap-5 (20px)
+    element.scrollLeft += cardWidth;
+  };
+
+  const sliderLeft = (element) => {
+    if (!element) return;
+    const cardWidth = element.children[0].offsetWidth + 20;
+    element.scrollLeft -= cardWidth;
+  };
 
   return (
     <div className="relative w-full"> 
@@ -47,15 +52,14 @@ const Slider = () => {
       <HiChevronRight className= "hidden md:block text-white text-[30px] absolute top-1/2 -translate-y-1/2 right-4 cursor-pointer "  onClick={()=>sliderRight(elementRef.current)}/>
 
         {/* Hero movie cards (horizontally scrollable) */}
-    <div className="flex overflow-x-auto w-full px-16 py-4 scrollbar-hide scroll-smooth" ref={elementRef}>
-   
+    <div className="flex overflow-x-auto w-full px-16 py-4 scrollbar-hide scroll-smooth gap-5 snap-x snap-mandatory" ref={elementRef}>
+
       {movieList.map((item) => (
         <img
           src={IMAGE_BASE_URL + item.backdrop_path}
           key={item.id}
           alt={item.title || item.name}
-          className="min-w-full  lg:h-[600px] sm:h-[310px] object-cover object-left-top mr-5 rounded-md hover:border-[4px]
-          border-gray-400 transition-all duration-100 ease-in"
+          className="snap-center shrink-0 min-w-full lg:h-[600px] sm:h-[310px] object-cover object-left-top rounded-md hover:border-[4px] border-gray-400 transition-all duration-100 ease-in cursor-pointer"
         />
       ))}
     </div>
